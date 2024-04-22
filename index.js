@@ -10,17 +10,24 @@ document.getElementById('carForm').addEventListener('submit', function(event) {
         data[key] = value;
     });
 
-    // Example: Sending data to server using fetch API
-    fetch('/predict', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-    })
-    .then(response => response.json())
-    .then(result => {
-        document.getElementById('predictionText').innerHTML = `<h3>${result.prediction_text}</h3>`;
-    })
-    .catch(error => console.error('Error:', error));
+    // Dummy prediction (replace with actual prediction code)
+    const predictionResult = predictCarPrice(data);
+
+    // Update prediction text or handle error
+    if (predictionResult.error) {
+        document.getElementById('predictionText').innerHTML = `<h3>Error: ${predictionResult.error}</h3>`;
+    } else {
+        document.getElementById('predictionText').innerHTML = `<h3>${predictionResult.prediction_text}</h3>`;
+    }
 });
+
+function predictCarPrice(data) {
+    // Example: Dummy prediction
+    try {
+        // Perform prediction logic here
+        const prediction = 'Dummy Prediction: Rs 20,000';
+        return { prediction_text: prediction };
+    } catch (error) {
+        return { error: error.message };
+    }
+}
