@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <form id="carForm">
+            <h1 class="text-center mb-4" style="color: brown;">Predictive Analysis</h1>
+            <div class="form-group">
+                <label for="year">Year of Registration</label>
+                <input type="number" class="form-control" id="year" name="Year" required>
+            </div>
+            <div class="form-group">
+                <label for="price">Showroom Price (In lakhs)</label>
+                <input type="number" class="form-control" id="price" name="Present_Price" required>
+            </div>
+            <div class="form-group">
+                <label for="kilometers">Kilometers Driven</label>
+                <input type="number" class="form-control" id="kilometers" name="Kms_Driven" required>
+            </div>
+            <div class="form-group">
+                <label for="owners">Number of Previous Owners</label>
+                <input type="number" class="form-control" id="owners" name="Owner" required>
+            </div>
+            <div class="form-group">
+                <label for="fuel">Fuel Type</label>
+                <select class="form-control" id="fuel" name="Fuel_Type_Petrol" required>
+                    <option value="Petrol">Petrol</option>
+                    <option value="Diesel">Diesel</option>
+                    <option value="CNG">CNG</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="seller">Are you a Dealer or Individual</label>
+                <select class="form-control" id="seller" name="Seller_Type_Individual" required>
+                    <option value="Dealer">Dealer</option>
+                    <option value="Individual">Individual</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="transmission">Transmission Type</label>
+                <select class="form-control" id="transmission" name="Transmission_Mannual" required>
+                    <option value="Manual">Manual Car</option>
+                    <option value="Automatic">Automatic Car</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Calculate the Selling Price</button>
+        </form>
+
+        <div id="predictionText" class="mt-4"></div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
